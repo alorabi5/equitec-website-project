@@ -1,25 +1,31 @@
 const knowMoreBtn = document.querySelector('.about-us-btn');
+
+// Scroll Up Variables
 const scrollUp = document.getElementById('scroll-up');
-const allOurClientsOptions = document.querySelectorAll('.our-clientele-section-logos');
+
+// Our Client Variables
+const allOurClientTitle = document.querySelectorAll('.our-clientele-section-title ul li');
+const allOurClientsLogos = document.querySelectorAll('.our-clientele-section-logos');
 
 
-// document.querySelector('.india-clients').style.display='';
-
+// Our Client Functions
 const clientsRigon = (event) => {
-    const selectedClassName = event.target.className;
-    const selected = document.querySelector(`.our-clientele-section-logos ${selectedClassName}`);
 
-    console.log(selected);
+    const selectedTitle = event.target;
+    const selectedClientsList = document.querySelector(`.our-clientele-section-logos.${selectedTitle.className}`);
 
-    allOurClientsOptions.forEach(selectedList => {
-            selectedList.classList.add('hide-clients-list');
-    });
+    if (selectedTitle && selectedClientsList){
+        allOurClientTitle.forEach(title => title.classList.remove('active-option'));
+        allOurClientsLogos.forEach(listOfLogo => listOfLogo.classList.remove('active-clients-list'));
 
-    // selected.classList.remove('hide-clients-list');
-
+        selectedTitle.classList.add('active-option');
+        selectedClientsList.classList.add('active-clients-list');
+    }
 
 };
 
+
+// Scroll Up Functions
 window.addEventListener("scroll", () => {
     if(window.pageYOffset > 100)
         scrollUp.style.display = 'block';
