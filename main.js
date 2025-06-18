@@ -7,10 +7,14 @@ const scrollUp = document.getElementById('scroll-up');
 const allOurClientTitle = document.querySelectorAll('.our-clientele-section-title ul li');
 const allOurClientsLogos = document.querySelectorAll('.our-clientele-section-logos');
 
+// Mobile Nav
+const mobileNav = document.getElementById("mobile-burger-nav");
+const burgerMenu = document.getElementById("burger-menu-icon");
+
 // Modal Variables
 const modal = document.getElementById("know-more");
 const btn = document.getElementById("about-btn");
-const span = document.querySelectorAll(".close");
+const closeModal = document.querySelectorAll(".close");
 
 
 
@@ -40,13 +44,26 @@ window.addEventListener("scroll", () => {
 
 });
 
+// Mobile Functions
+burgerMenu.onclick = () => {
+    mobileNav.style.display = "block";
+}
+
+closeModal[0].onclick = () => {
+    mobileNav.style.display = "none";
+}
+
 
 // Modal Functions
 btn.onclick = () => {
     modal.style.display = "block";
 }
 
-span[0].onclick = () => {
+closeModal[0].onclick = () => {
+    mobileNav.style.display = "none";
+}
+
+closeModal[1].onclick = () => {
     modal.style.display = "none";
 }
 
