@@ -59,10 +59,6 @@ btn.onclick = () => {
     modal.style.display = "block";
 }
 
-closeModal[0].onclick = () => {
-    mobileNav.style.display = "none";
-}
-
 closeModal[1].onclick = () => {
     modal.style.display = "none";
 }
