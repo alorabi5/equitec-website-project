@@ -7,6 +7,12 @@ const scrollUp = document.getElementById('scroll-up');
 const allOurClientTitle = document.querySelectorAll('.our-clientele-section-title ul li');
 const allOurClientsLogos = document.querySelectorAll('.our-clientele-section-logos');
 
+// Modal Variables
+const modal = document.getElementById("know-more");
+const btn = document.getElementById("about-btn");
+const span = document.querySelectorAll(".close");
+
+
 
 // Our Client Functions
 const clientsRigon = (event) => {
@@ -33,3 +39,19 @@ window.addEventListener("scroll", () => {
         scrollUp.style.display = 'none';
 
 });
+
+
+// Modal Functions
+btn.onclick = () => {
+    modal.style.display = "block";
+}
+
+span[0].onclick = () => {
+    modal.style.display = "none";
+}
+
+window.onclick = (event) => {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
