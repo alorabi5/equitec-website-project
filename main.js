@@ -33,13 +33,15 @@ const clientsRigon = (event) => {
 
     const selectedTitle = event.target;
     const selectedClientsList = document.querySelector(`.our-clientele-section-logos.${selectedTitle.className}`);
-
+    
     if (selectedTitle && selectedClientsList){
         allOurClientTitle.forEach(title => title.classList.remove('active-option'));
-        allOurClientsLogos.forEach(listOfLogo => listOfLogo.classList.remove('active-clients-list'));
+        allOurClientsLogos.forEach(listOfLogo => {listOfLogo.classList.add('hide-clients-list')
+        });
 
         selectedTitle.classList.add('active-option');
-        selectedClientsList.classList.add('active-clients-list');
+        selectedClientsList.classList.remove('hide-clients-list');
+        
     }
 
 };
